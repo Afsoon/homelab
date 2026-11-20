@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: wildcard-lab
+  namespace: kube-system
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+spec:
+  secretName: wildcard-lab-tls
+  dnsNames:
+    - lab.saidatr.dev
+    - "*.lab.saidatr.dev"
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-production
