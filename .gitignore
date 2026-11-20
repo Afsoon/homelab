@@ -1,0 +1,10 @@
+# Ignore everything by default
+*
+
+# --- Whitelist (add new entries here as the repo grows) ---
+!.gitignore
+!LICENSE
+!apps/
+!apps/**
+!bootstrap/
+!bootstrap/**
