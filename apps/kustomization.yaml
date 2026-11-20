@@ -1,6 +1,5 @@
-# Everything in this directory is synced by the "root" ArgoCD Application
-# (bootstrap/root-app.yaml). Add your workloads here.
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-resources: []
+resources:
+  - external-secrets.yaml
