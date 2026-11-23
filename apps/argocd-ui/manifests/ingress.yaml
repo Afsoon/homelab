@@ -4,7 +4,7 @@ metadata:
   name: argocd-ui
   namespace: argocd
   annotations:
-    traefik.ingress.kubernetes.io/service.serverstransport: argocd-insecure@kubernetescrd
+    traefik.ingress.kubernetes.io/service.serverstransport: argocd-argocd-insecure@kubernetescrd
 spec:
   ingressClassName: traefik
   rules:
