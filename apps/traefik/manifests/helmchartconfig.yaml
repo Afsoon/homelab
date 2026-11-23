@@ -18,3 +18,9 @@ spec:
     service:
       spec:
         type: ClusterIP
+    logs:
+      general:
+        level: DEBUG
+      access:
+        enabled: true
+        format: json
