@@ -7,3 +7,4 @@ resources:
   - tailscale.yaml
   - traefik.yaml
   - argocd-ui.yaml
+  - registry.yaml

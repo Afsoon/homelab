@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: coredns-custom
+  namespace: kube-system
+data:
+  registry.override: |
+    rewrite stop {
+      name exact registry.lab.saidatr.dev traefik.kube-system.svc.cluster.local
+      answer auto
+    }

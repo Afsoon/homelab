@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ui-data
+  namespace: registry
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  size: 1Gi
