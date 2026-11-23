@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-ui
+  namespace: argocd
+  annotations:
+    traefik.ingress.kubernetes.io/service.serverstransport: argocd-insecure@kubernetescrd
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: argocd.lab.saidatr.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 443

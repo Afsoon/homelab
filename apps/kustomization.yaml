@@ -6,3 +6,4 @@ resources:
   - cert-manager.yaml
   - tailscale.yaml
   - traefik.yaml
+  - argocd-ui.yaml
