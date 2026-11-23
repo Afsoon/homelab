@@ -8,3 +8,4 @@ resources:
   - traefik.yaml
   - argocd-ui.yaml
   - registry.yaml
+  - restate-operator.yaml

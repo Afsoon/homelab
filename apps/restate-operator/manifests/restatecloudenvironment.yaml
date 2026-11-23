@@ -1,0 +1,14 @@
+apiVersion: restate.dev/v1beta1
+kind: RestateCloudEnvironment
+metadata:
+  name: cloud-env
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+spec:
+  environmentId: env_201m7qscbtbpk0frfcb9a26xxw4
+  signingPublicKey: publickeyv1_1jNpXnDgyqWTz9ESQvJ1KxekHMfpdevBn59Yqs1kVPB
+  region: eu
+  authentication:
+    secret:
+      name: restate-cloud-env-secret
+      key: token
