@@ -8,6 +8,19 @@ data:
     {
       "TCP": {
         "80": {"TCPForward": "traefik.kube-system.svc.cluster.local:80"},
-        "443": {"TCPForward": "traefik.kube-system.svc.cluster.local:443"}
+        "443": {"TCPForward": "traefik.kube-system.svc.cluster.local:443"},
+        "8443": {"HTTPS": true}
+      },
+      "Web": {
+        "${TS_CERT_DOMAIN}:8443": {
+          "Handlers": {
+            "/api/webhook": {
+              "Proxy": "https+insecure://argocd-server.argocd.svc.cluster.local:443"
+            }
+          }
+        }
+      },
+      "AllowFunnel": {
+        "${TS_CERT_DOMAIN}:8443": true
       }
     }
